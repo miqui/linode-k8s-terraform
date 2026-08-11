@@ -35,4 +35,4 @@
 
 - [x] 6.1 Run `terraform fmt` and `terraform validate` against the module
 - [x] 6.2 Run `terraform plan` with default variables and confirm it plans exactly one `linode_lke_cluster` with one node pool
-- [ ] 6.3 Run `terraform apply` against a real Linode account, confirm `kubectl` connectivity using the kubeconfig output, then `terraform destroy` and confirm the cluster no longer appears in `terraform state list` or the Linode Cloud Manager
+- [x] 6.3 Run `terraform apply` against a real Linode account, confirm `kubectl` connectivity using the kubeconfig output, then `terraform destroy` and confirm the cluster no longer appears in `terraform state list` or the Linode Cloud Manager
