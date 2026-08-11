@@ -11,9 +11,9 @@ variable "region" {
 }
 
 variable "k8s_version" {
-  description = "Kubernetes version for the LKE cluster."
+  description = "Kubernetes version for the LKE cluster. If omitted or set to empty string, the latest supported LKE version is used."
   type        = string
-  default     = "1.31"
+  default     = ""
 }
 
 variable "node_type" {
