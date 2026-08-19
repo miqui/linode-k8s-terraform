@@ -1,0 +1,30 @@
+name: Checkov (Terraform IaC scan)
+
+"on":
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  checkov:
+    name: Checkov Terraform scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Run Checkov
+        uses: bridgecrewio/checkov-action@3be6be7935e32c4c683b1d40622aa43a7c8bbcaa # v12.3118.0
+        with:
+          directory: terraform
+          framework: terraform
+          quiet: true
+          soft_fail: false
